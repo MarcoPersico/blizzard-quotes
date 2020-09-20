@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --history-api-fallback --config ./config/webpack.dev.ts"
+    "start:local": "webpack-dev-server --open --history-api-fallback --config ./config/webpack.dev.ts",
+    "build": "webpack --mode production --config ./config/webpack.prod.ts"
   },
   "keywords": [],
   "author": "",

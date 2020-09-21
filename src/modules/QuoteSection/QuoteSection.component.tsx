@@ -29,7 +29,7 @@ const QuoteSectionComponent = ({
                 </>
               ) : (
                 <>
-                  <p className="bq_card_body_quote quote">“ {quoteData?.quote} ”</p>
+                  <p className="bq_card_body_quote quote">“ {quoteData?.quote}”</p>
                   <p className="bq_card_body_quote author">{quoteData?.author}.</p>
                 </>
               )}

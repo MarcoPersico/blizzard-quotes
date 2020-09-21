@@ -14,7 +14,7 @@ const config: webpack.Configuration = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    filename: 'bundle.js',
+    filename: 'build.js',
   },
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
@@ -24,11 +24,19 @@ const config: webpack.Configuration = {
     rules: [
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       {
-        test: /\.(eot|svg|ttf|webp)$/,
+        test: /\.webp$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'static/',
+          outputPath: 'static/images',
+        },
+      },
+      {
+        test: /\.ttf$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'static/fonts/',
         },
       },
       {
@@ -36,7 +44,6 @@ const config: webpack.Configuration = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: '/',
         },
       },
     ],

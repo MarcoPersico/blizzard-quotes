@@ -22,7 +22,7 @@ const QuoteSectionContainer = ({ data }: QuoteSectionContainerProps) => {
 
   const getRandomQuote = () => {
     setIsLoading(true);
-    return fetch(`http://blizzquotesapi-env.eba-r4wwp9yp.us-east-2.elasticbeanstalk.com/api/v1/quotes/get-random?type=${typeId}`)
+    return fetch(`https://blizzard-quotes-api.herokuapp.com/api/v1/quotes/get-random?type=${typeId}`)
       .then((value) => value.json())
       .then((response) => setRandomQuote(response))
       .catch((catchedError) => setError(catchedError.message))

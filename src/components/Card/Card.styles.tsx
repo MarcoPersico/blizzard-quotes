@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import Lifecraft from '../../assests/font/LifeCraft_Font.ttf';
-import custombh from '../../assests/images/quote-bg.webp';
-import custommbh from '../../assests/images/smoke.webp';
+import smokeBG from '../../assests/images/quote-bg.webp';
+import smokeLoader from '../../assests/images/smoke.webp';
 
 const CardStyles = styled.div`
   display: flex;
@@ -19,7 +18,7 @@ const CardStyles = styled.div`
   background-size: cover;
   color: var(--second-text-color);
   background-image:
-    url('${custombh}'),
+    url('${smokeBG}'),
     radial-gradient(
       ellipse at center,
       rgba(255,244,217,1) 0%,
@@ -28,11 +27,6 @@ const CardStyles = styled.div`
       rgb(99 89 67) 82%,
       rgb(29 27 22) 100%
     );
-
-  @font-face {
-    font-family: 'Lifecraft';
-    src: url('${Lifecraft}') format('truetype');
-  }
 
   .bq_card {
     &_smoke {
@@ -45,7 +39,7 @@ const CardStyles = styled.div`
       background-repeat: no-repeat;
       background-position-x: 50%;
       z-index: 10;
-      background-image: url('${custommbh}');
+      background-image: url('${smokeLoader}');
     }
 
     &_header {
@@ -73,16 +67,15 @@ const CardStyles = styled.div`
       z-index: 1000;
 
       &_quote {
-        font-family: 'Amatic SC', cursive;
-        font-size: 1.75rem;
-        font-weight: bold;
+        font-family: 'Satisfy', cursive;
+        font-size: 1.45rem;
       }
 
       .author {
         padding-top: 1rem;
         text-align: right;
-        font-weight: bold;
         font-style: italic;
+        font-weight: bold;
       }
 
       .quote {

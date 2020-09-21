@@ -14,7 +14,7 @@ const config: Configuration = {
   module: {
     rules: [
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-      { test: /\.(webp|ttf|png)$/, loader: 'file-loader' },
+      { test: /\.(webp|ttf|png|ico|css)$/, loader: 'file-loader' },
     ],
   },
   plugins: [htmlPlugin],

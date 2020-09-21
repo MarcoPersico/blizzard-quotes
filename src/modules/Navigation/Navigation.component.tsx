@@ -42,7 +42,6 @@ const NavigationComponent = ({ onMenuClicked, isMenuVisible, onItemSelected }: N
       <div className="bq_navigation">
         <div className="bq_navigation_brand">
           <img src={BrandImage} width="32" height="32" />
-          <span className="bq_title">Blizzard Quotes</span>
         </div>
         <div className="bq_navigation_actions">
           {size.width > 1024

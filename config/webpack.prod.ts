@@ -22,14 +22,21 @@ const config: webpack.Configuration = {
   },
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       {
-        test: /\.(eot|svg|ttf|webp|ico)$/,
+        test: /\.(eot|svg|ttf|webp)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
           outputPath: 'static/',
+        },
+      },
+      {
+        test: /\.ico$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: '/',
         },
       },
     ],

@@ -3,8 +3,9 @@ import * as webpack from 'webpack';
 import HtmlWebPackPlugin from 'html-webpack-plugin';
 
 const htmlPlugin: HtmlWebPackPlugin = new HtmlWebPackPlugin({
+  filename: 'index.html',
   template: './src/index.html',
-  filename: './index.html',
+  favicon: './src/favicon.ico',
 });
 
 const envPlugin = new webpack.EnvironmentPlugin({ NODE_ENV: 'production' });

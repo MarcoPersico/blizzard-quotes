@@ -5,7 +5,6 @@ import WarcraftBg from '../../assests/images/warcraft-bg.webp';
 import OverwatchBg from '../../assests/images/overwatch-bg.webp';
 import DiabloBg from '../../assests/images/diablo-bg.webp';
 import StarcraftBg from '../../assests/images/starcraft-bg.webp';
-import BlizzardBg from '../../assests/images/blizzard-bg.webp';
 import QuoteSection from '../QuoteSection';
 
 const LazyQuoteSection = loadable(() => import('../QuoteSection'));
@@ -25,7 +24,7 @@ const SectionRouting = () => (
       <LazyQuoteSection key={4} data={{ title: 'DIABLO QUOTES', background: DiabloBg }} />
     </Route>
     <Route path='/'>
-      <QuoteSection key={5} data={{ title: 'ANYTHING', background: BlizzardBg }} />
+      <QuoteSection key={5} data={{ title: 'ANYTHING', background: '' }} />
     </Route>
   </Switch>
 );

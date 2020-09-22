@@ -1,17 +1,21 @@
 import { createGlobalStyle } from 'styled-components';
 import SmokeLoader from './images/smoke-loader.webp';
+import BlizzardBg from './images/blizzard-bg.webp';
 
 const GlobalStyles = createGlobalStyle`
   body {
     --dark-primary-color: #0B2B52;
+    --dark-primary-color-ts: #0b2b5270;
     --primary-color: #0c3a71;
     --light-primary-color: #47557c;
-    --lighter-primary-color: #7785b7;
+    --light-primary-color-ts: #7785b729;
     --text-color: #f0f0f0;
     --light-text-color: #ffffff;
     --second-text-color: #131313;
 
-    background-color: var(--primary-color);
+    background-image: url('${BlizzardBg}');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   * {

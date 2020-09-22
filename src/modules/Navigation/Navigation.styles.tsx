@@ -4,7 +4,7 @@ const NavigationStyles = styled.header`
   height: 70px;
   padding: 0 1rem;
   width: 100%;
-  background-color: var(--dark-primary-color);
+  background-color: var(--dark-primary-color-ts);
   border-bottom: 1px solid var(--light-primary-color);
   position: relative;
   color: var(--text-color);
@@ -81,6 +81,7 @@ const NavigationStyles = styled.header`
     
     @media screen and (min-width: 1024px) {
       &_menu {
+        background-color: transparent;
         position: relative;
         width: 100%;
         height: 70px;
@@ -97,7 +98,7 @@ const NavigationStyles = styled.header`
           min-width: 100px;
 
           &:hover {
-            background-color: var(--light-primary-color);
+            background-color: var(--light-primary-color-ts);
           }
         }        
       }

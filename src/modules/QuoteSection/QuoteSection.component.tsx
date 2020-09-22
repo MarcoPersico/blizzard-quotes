@@ -42,7 +42,7 @@ const QuoteSectionComponent = ({
               : (
                 <>
                   <a
-                    href={`http://twitter.com/intent/tweet?url=${window.location.href}&text="${quoteData?.quote}"%20by%20${quoteData?.author}&hashtags=blizzardQuotes`}
+                    href={`http://twitter.com/intent/tweet?url=${window.location.href}&text="${quoteData?.quote}"%20by%20${quoteData?.author}&hashtags=BlizzardQuotes`}
                     target="_blank"
                     className="bq_wow_button"
                   >

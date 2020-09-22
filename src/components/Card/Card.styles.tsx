@@ -68,7 +68,7 @@ const CardStyles = styled.div`
 
       &_quote {
         font-family: 'Satisfy', cursive;
-        font-size: 1.45rem;
+        font-size: 1.3rem;
       }
 
       .author {

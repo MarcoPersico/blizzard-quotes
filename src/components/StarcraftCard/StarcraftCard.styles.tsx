@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import CircuitBg from '../../assests/images/circuit-bg.png';
+import CircuitBg from '../../assests/images/circuit-bg.webp';
 
 const StarcraftCardStyles = styled.div`
   display: flex;

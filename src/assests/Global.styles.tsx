@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import SmokeLoader from './images/smoke-loader.webp';
 import LightLoader from './images/light-loader.webp';
 import BlizzardBg from './images/blizzard-bg.webp';
-import StarcarfButtonBorder from './images/starcraft-border-button.png';
+import StarcarfButtonBorder from './images/starcraft-border-button.webp';
 
 const GlobalStyles = createGlobalStyle`
   body {

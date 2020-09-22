@@ -12,19 +12,19 @@ const LazyQuoteSection = loadable(() => import('../QuoteSection'));
 const SectionRouting = () => (
   <Switch>
     <Route path='/warcraft/:id'>
-      <LazyQuoteSection key={1} data={{ title: 'WARCRAFT QUOTES', background: WarcraftBg }} />
+      <LazyQuoteSection key={1} data={{ title: 'WARCRAFT QUOTES', background: WarcraftBg, type: 'warcraft' }} />
     </Route>
     <Route path='/overwatch/:id'>
-      <LazyQuoteSection key={2} data={{ title: 'OVERWATCH QUOTES', background: OverwatchBg }} />
+      <LazyQuoteSection key={2} data={{ title: 'OVERWATCH QUOTES', background: OverwatchBg, type: 'overwatch' }} />
     </Route>
     <Route path='/starcraft/:id'>
-      <LazyQuoteSection key={3} data={{ title: 'STARCRAFT QUOTES', background: StarcraftBg }} />
+      <LazyQuoteSection key={3} data={{ title: 'STARCRAFT QUOTES', background: StarcraftBg, type: 'starcraft' }} />
     </Route>
     <Route path='/diablo/:id'>
-      <LazyQuoteSection key={4} data={{ title: 'DIABLO QUOTES', background: DiabloBg }} />
+      <LazyQuoteSection key={4} data={{ title: 'DIABLO QUOTES', background: DiabloBg, type: 'diablo' }} />
     </Route>
     <Route path='/'>
-      <QuoteSection key={5} data={{ title: 'ANYTHING', background: '' }} />
+      <QuoteSection key={5} data={{ title: 'ANYTHING', background: '', type: 'blizzard' }} />
     </Route>
   </Switch>
 );

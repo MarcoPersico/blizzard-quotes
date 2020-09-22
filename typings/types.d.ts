@@ -9,6 +9,7 @@ export interface NavigationProps {
 interface SectionData {
   title: string | undefined;
   background: string;
+  type: 'blizzard' | 'warcraft' | 'overwatch' | 'diablo' | 'starcraft';
 }
 
 export interface QuoteSectionContainerProps {

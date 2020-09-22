@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import SmokeLoader from './images/smoke-loader.webp';
+import LightLoader from './images/light-loader.webp';
 import BlizzardBg from './images/blizzard-bg.webp';
+import StarcarfButtonBorder from './images/starcraft-border-button.png';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -63,23 +65,86 @@ const GlobalStyles = createGlobalStyle`
     transition: all 200ms;
 
     &:hover {
-      opacity: 0.9;
+      filter: brightness(1.1);
       box-shadow: 3px 2px 10px 2px black;
     }
   }
 
-  .bq_shadow {
+  .bq_loader-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+  }
 
-    &_loader {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-image: url('${SmokeLoader}');
+  .bq_light_loader {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-image: url('${LightLoader}');
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform: scale(0.5);    
+  }
+
+  .bq_shadow_loader {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url('${SmokeLoader}');
+  }
+
+  .bq_blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(1px);
+  }
+
+  .bq_starcraft_border {
+    box-shadow: 0 0 25px 15px #459aff6b;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-style: double;
+    border-color: #45c1ff;
+    border-width: 7px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bq_starcraft_button {
+    position: relative;
+    height: 35px;
+    min-width: 130px;
+    margin: 0px 15px;
+    color: white;
+    background: linear-gradient(180deg,#091217c2,rgb(24 83 142 / 61%));
+    transition: all 200ms;
+
+    &:hover {
+      filter: brightness(1.3);
+    }
+
+    &:after {
+      border-style: solid;
+      border-width: 17px 60px;
+      border-image: url('${StarcarfButtonBorder}') 17 60 repeat;
+      border-image-outset: 14px;
+      content: "";
+      bottom: 0;
+      display: block;
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 `;

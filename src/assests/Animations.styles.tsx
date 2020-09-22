@@ -33,6 +33,13 @@ const Animations = createGlobalStyle`
     z-index: 1;    
   }
 
+  .glow {
+    animation: glow 8000ms infinite alternate;
+  }
+
+  .flash {
+    animation: flash 1000ms forwards;
+  }
 
   @keyframes smoking {
     from { background-size: 100% 200%}
@@ -47,6 +54,23 @@ const Animations = createGlobalStyle`
   @keyframes fadeOut {
     from { opacity: 1 }
     to { opacity: 0 }
+  }
+
+  @keyframes glow {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .25;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes flash {
+    from { transform: scale(0.5) }
+    to { transform: scale(1.5) }
   }
 `;
 

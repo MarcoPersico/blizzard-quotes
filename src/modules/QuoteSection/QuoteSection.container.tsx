@@ -32,6 +32,7 @@ const QuoteSectionContainer = ({ data }: QuoteSectionContainerProps) => {
   return (
     <QuoteSection.Component
       title={data.title}
+      type={data.type}
       background={data.background}
       isLoading={isLoading}
       onLoad={() => getRandomQuote()}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StarcraftCard } from '.';
+import { OverwatchCard } from '.';
 import { CardProps } from '../../../typings/types';
 
 const CardComponent = (
@@ -10,8 +10,7 @@ const CardComponent = (
     loader,
   }: CardProps,
 ) => (
-    <StarcraftCard.Styles>
-      <div className="bq_starcraft_border neon" />
+    <OverwatchCard.Styles>
       <div className="bq_card_header">
         {header}
       </div>
@@ -22,7 +21,8 @@ const CardComponent = (
         {footer}
       </div>
       {loader}
-    </StarcraftCard.Styles>
+      <div className="bq_card_ow_highlight" />
+    </OverwatchCard.Styles>
 );
 
 export default CardComponent;

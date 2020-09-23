@@ -1,9 +1,11 @@
 import React from 'react';
 import { QuoteSection } from '.';
 import { QuoteSectionProps } from '../../../typings/types';
-import WarcraftCard from '../../components/WarcraftCard';
 import Tweet from '../../assests/images/tweet.webp';
 import StarcraftCard from '../../components/StarcraftCard';
+import OverwatchCard from '../../components/OverwatchCard';
+import WarcraftCard from '../../components/WarcraftCard';
+import useTypeWriter from '../../utils/useTypeWriter';
 
 const QuoteSectionComponent = ({
   title,
@@ -20,18 +22,27 @@ const QuoteSectionComponent = ({
     </div>
   );
 
-  const renderBody = () => (
+  const renderBody = (hasTypeWriter: boolean) => (
     <div className={`${isLoading ? 'fadeOut' : 'fadeIn'}`}>
-      {error
+      {error || isLoading
         ? (
           <>
             <p className="bq_card_body_quote quote">{error}</p>
-            <p className="bq_card_body_quote author">Whoops Error :(</p>
           </>
         ) : (
           <>
-            <p className="bq_card_body_quote quote">“ {quoteData?.quote}”</p>
-            <p className="bq_card_body_quote author">{quoteData?.author}.</p>
+            {hasTypeWriter
+              ? (
+                <>
+                  {quoteData ? useTypeWriter(quoteData.quote, 'bq_card_body_quote quote', 20) : null}
+                  {quoteData ? useTypeWriter(quoteData.author, 'bq_card_body_quote author', 30) : null}
+                </>
+              ) : (
+                <>
+                  <p className="bq_card_body_quote quote">“ {quoteData?.quote}”</p>
+                  <p className="bq_card_body_quote author">{quoteData?.author}.</p>
+                </>
+              )}
           </>
         )}
     </div>
@@ -49,9 +60,8 @@ const QuoteSectionComponent = ({
               className={actionStyle}
             >
               <img src={Tweet} width="16" height="16" />
-        &nbsp;&nbsp;Tweet It
-      </a>
-
+              &nbsp;&nbsp;Tweet It
+            </a>
             <button onClick={onLoad} className={actionStyle}>Random</button>
           </>
         )}
@@ -64,7 +74,7 @@ const QuoteSectionComponent = ({
         return (
           <WarcraftCard
             header={renderHeader()}
-            body={renderBody()}
+            body={renderBody(false)}
             footer={renderFooter('bq_wow_button')}
             loader={(
               <div className={`fadeIn bq_loader-container ${isLoading ? 'fadeIn' : 'fadeOut'}`}>
@@ -77,10 +87,24 @@ const QuoteSectionComponent = ({
         return (
           <StarcraftCard
             header={renderHeader()}
-            body={renderBody()}
+            body={renderBody(true)}
             footer={renderFooter('bq_starcraft_button')}
             loader={(
               <div className={`fadeIn bq_loader-container ${isLoading ? 'fadeIn' : 'fadeOut'}`}>
+                <div className="bq_starcraft_loader flash" />
+              </div>
+            )}
+          />
+        );
+      case 'overwatch':
+        return (
+          <OverwatchCard
+            header={renderHeader()}
+            body={renderBody(true)}
+            footer={renderFooter('')}
+            loader={(
+              <div className={`fadeIn bq_loader-container ${isLoading ? 'fadeIn' : 'fadeOut'}`}>
+                <div className="bq_ow_loader flash-ow" />
               </div>
             )}
           />

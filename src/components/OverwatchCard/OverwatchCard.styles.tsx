@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import CircuitBg from '../../assests/images/circuit-bg.webp';
+import OverwatchCardBg from '../../assests/images/overwatch-card-bg.webp';
+import OWBar from '../../assests/images/ow-bar.webp';
 
-const StarcraftCardStyles = styled.div`
+const OverwatchCardStyles = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,12 +12,12 @@ const StarcraftCardStyles = styled.div`
   width: 95%;
   height: 80%;
   padding: 0 1rem;
-  background-image: url('${CircuitBg}');
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: inset 0px 0px 15px 5px #2689ff;
-  background-color: #0000008a;
   color: var(--text-color);
+  background-position: 50%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-color: var(--dark-primary-color-ts);
+  background-image: url('${OverwatchCardBg}');
 
   .bq_card {
     &_smoke {
@@ -40,9 +41,9 @@ const StarcraftCardStyles = styled.div`
       z-index: 1000;
 
       h2 { 
-        font-family: 'Starcraft',cursive;
-        font-size: 1.45rem;
-        color: #2eb2ff;
+        font-family: 'Overwatch', cursive;
+        font-style: italic;
+        font-size: 2.25rem;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
       }
     }
@@ -54,23 +55,21 @@ const StarcraftCardStyles = styled.div`
       align-items: center;
       justify-content: center;
       z-index: 1000;
-      color: #a9e2ff;
-      text-shadow: -2px -2px 0 #000, 1px 3px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-      font-weight: bold;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
       
       &_quote {
-        font-family: 'Euro', cursive;
+        font-family: 'Overwatch', cursive;
       }
 
       .author {
-        padding-top: 1rem;
+        padding-top: 1.25rem;
         text-align: right;
-        font-size: 1.25rem;
+        font-size: 1.3rem;
       }
 
       .quote {
         text-align: center;
-        font-size: 1.25rem;
+        font-size: 1.75rem;
       }
     }
 
@@ -80,11 +79,41 @@ const StarcraftCardStyles = styled.div`
       height: 15%;
       padding: 0.5rem 0 1.5rem;
       z-index: 1000;
+      background-image: url('${OWBar}');
+      background-size: 100%;
+      background-position: 100% -200%;
+      background-repeat: no-repeat;
 
       &_action-group {
         width: 100%;
         display: flex;
         justify-content: space-between;
+
+        a:first-child {
+          height: 35px;
+          width: 150px;
+          background: #3996d5b8;
+          color: white;
+          transform: skew(-15deg);
+        }
+        button:last-child {
+          height: 35px;
+          width: 150px;
+          background: #f99e1a9e;
+          color: white;
+          transform: skew(-15deg);
+        }
+      }
+    }
+
+    &_ow {
+      &_highlight {
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 10%;
+        border-bottom: 0.4rem solid #f99e1a;
       }
     }
   }
@@ -93,9 +122,12 @@ const StarcraftCardStyles = styled.div`
     width: 75%;
     height: 60%;
     background-position-y: 10%;
+    background-size: 50%;
 
     .bq_card_footer {
       justify-content: flex-end;
+      background-size: 65%;
+      background-position: 45% 85%;
 
       &_action-group {
         width: 50%;
@@ -104,8 +136,8 @@ const StarcraftCardStyles = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
-    width: 50%;
-    height: 60%;
+    width: 55%;
+    height: 70%;
   }
 
   @media screen and (min-width: 1440px) {
@@ -122,4 +154,4 @@ const StarcraftCardStyles = styled.div`
   }
 `;
 
-export default StarcraftCardStyles;
+export default OverwatchCardStyles;

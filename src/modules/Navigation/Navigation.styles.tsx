@@ -41,7 +41,7 @@ const NavigationStyles = styled.header`
         }
 
         &:hover {
-          background-color: var(--light-primary-color);
+          background-color: var(--light-primary-color-ts);
         }
       }
     }

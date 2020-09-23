@@ -38,7 +38,15 @@ const Animations = createGlobalStyle`
   }
 
   .flash {
-    animation: flash 1000ms forwards;
+    animation: flash 3000ms forwards;
+  }
+
+  .flash-ow {
+    animation: flash-ow 3000ms forwards;
+  }
+
+  .neon {  
+    animation: neon 4500ms ease-in-out infinite alternate;
   }
 
   @keyframes smoking {
@@ -69,9 +77,44 @@ const Animations = createGlobalStyle`
   }
 
   @keyframes flash {
-    from { transform: scale(0.5) }
-    to { transform: scale(1.5) }
+    0% { box-shadow: inset 0px 0px 7px 3px #2689ff; }
+    100% { box-shadow: inset 0px 0px 250px 120px #2689ff; }
   }
+
+  @keyframes flash-ow {
+    0% { box-shadow: inset 0px 0px 7px 3px #fff; }
+    100% { box-shadow: inset 0px 0px 250px 120px #fff; }
+  }
+
+  @keyframes neon {
+  0% {
+    box-shadow:
+    0 0 2px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30,132,242,0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 34px rgba(30,132,242,0.78),
+    0 0 54px rgba(30,132,242,0.92);
+  }
+  50% {
+    box-shadow:
+    0 0 6px rgba(202,228,225,0.98),
+    0 0 30px rgba(202,228,225,0.42),
+    0 0 12px rgba(30,132,242,0.58),
+    0 0 22px rgba(30,132,242,0.84),
+    0 0 38px rgba(30,132,242,0.88),
+    0 0 60px rgba(30,132,242,1);
+  }
+  100% {
+    box-shadow:
+    0 0 2px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30,132,242,0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 34px rgba(30,132,242,0.78),
+    0 0 54px rgba(30,132,242,0.92);
+  }
+}
 `;
 
 export default Animations;

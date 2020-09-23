@@ -1,21 +1,50 @@
 import { createGlobalStyle } from 'styled-components';
 import SmokeLoader from './images/smoke-loader.webp';
 import LightLoader from './images/light-loader.webp';
+import WarcraftBg from './images/warcraft-bg.webp';
+import OverwatchBg from './images/overwatch-bg.webp';
+import DiabloBg from './images/diablo-bg.webp';
+import StarcraftBg from './images/starcraft-bg.webp';
 import BlizzardBg from './images/blizzard-bg.webp';
 import StarcarfButtonBorder from './images/starcraft-border-button.webp';
 
-const GlobalStyles = createGlobalStyle`
+type StylesProps = {
+  currentSection: number;
+};
+
+const getCurrentBg = (id: number) => {
+  switch (id) {
+    case 1: {
+      return WarcraftBg;
+    }
+    case 2: {
+      return StarcraftBg;
+    }
+    case 3: {
+      return OverwatchBg;
+    }
+    case 4: {
+      return DiabloBg;
+    }
+    default: {
+      return BlizzardBg;
+    }
+  }
+};
+
+const GlobalStyles = createGlobalStyle<StylesProps>`
   body {
-    --dark-primary-color: #0B2B52;
-    --dark-primary-color-ts: #0b2b5270;
+    --dark-primary-color: #000000eb;
+    --dark-primary-color-ts: #0000006e;
     --primary-color: #0c3a71;
-    --light-primary-color: #47557c;
+    --light-primary-color: #fff;
     --light-primary-color-ts: #7785b729;
     --text-color: #f0f0f0;
     --light-text-color: #ffffff;
     --second-text-color: #131313;
 
-    background-image: url('${BlizzardBg}');
+    ${(props) => `background-image: url('${getCurrentBg(props.currentSection)}')`};
+    transition: background-image 200ms;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -96,6 +125,20 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     background-size: cover;
     background-image: url('${SmokeLoader}');
+  }
+
+  .bq_starcraft_loader {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 70px 30px #2689ff;
+    z-index: 10000000;
+  }
+
+  .bq_ow_loader {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 70px 30px #fff;
+    z-index: 10000000000;
   }
 
   .bq_blur {

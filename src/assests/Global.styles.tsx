@@ -45,7 +45,7 @@ const GlobalStyles = createGlobalStyle<StylesProps>`
 
     ${(props) => `background-image: url('${getCurrentBg(props.currentSection)}')`};
     background-color: #00000077;
-    transition: background-image 200ms;
+    transition: all 200ms;
     background-size: cover;
     background-repeat: no-repeat;
   }

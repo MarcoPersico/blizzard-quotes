@@ -117,7 +117,7 @@ const WarcraftCardStyles = styled.div`
     height: 60%;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1600px) {
     width: 45%;
     height: 60%;
 
